@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+class Timer{
+private:
+    int hours;
+    int minutes;
+    int seconds;
+public:
+    Timer(int h, int m, int s){
+        this->hours = h % 24 + (m + s / 60) / 60;
+        this->minutes = (m + s / 60) % 60;
+        this->seconds = s % 60;
+    }
+    void printTime(){
+        cout<<hours<<":"<<minutes<<":"<<seconds<<endl;
+    }
+
+};
+
+
+int main(){
+    Timer t1(1, 69, 62);
+    t1.printTime();
+    return 0;
+}
